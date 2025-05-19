@@ -1,0 +1,42 @@
+{
+  "name": "@humansean/mcp-appwrite-filesystem",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-filesystem": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "tsc && npx @modelcontextprotocol/inspector node dist/index.js",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "filesystem",
+    "mcp",
+    "server"
+  ],
+  "author": "HumanSean",
+  "license": "MIT",
+  "description": "A simple but helpful MCP server combined the power of Appwrite Storage and file system",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.2",
+    "@opendocsg/pdf2md": "^0.2.1",
+    "fastmcp": "^1.27.6",
+    "html-to-md": "^0.8.8",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.9.0",
+    "node-appwrite": "^16.0.0",
+    "pptx-text-parser": "^1.1.1",
+    "pptx2json": "^0.0.10",
+    "pptx2json-ts": "^0.0.2",
+    "sax": "^1.4.1",
+    "xlsx": "^0.18.5",
+    "xmindparser": "^1.0.2",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "typescript": "^5.8.3"
+  }
+}

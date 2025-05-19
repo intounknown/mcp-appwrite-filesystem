@@ -15,8 +15,8 @@ import fs from "fs";
 const xmindParser = new xmindparser();
 
 const server = new FastMCP({
-  name: "mcp-appwrite-storage",
-  version: "1.0.0",
+  name: "mcp-appwrite-filesystem",
+  version: "1.0.1",
 });
 
 const endpoint = process.env.ENDPOINT || "";
@@ -33,7 +33,7 @@ const storage = new Storage(client);
 
 // Read a file from Appwrite Storage by fileId
 server.addTool({
-  name: "mcp-appwrite-storage_read",
+  name: "mcp-appwrite-filesystem_read",
   description: "Read a file from Appwrite Storage by fileId",
   parameters: z.object({
     fileId: z.string(),
@@ -136,7 +136,7 @@ server.addTool({
 });
 
 server.addTool({
-  name: "mcp-appwrite-storage_write_by_content",
+  name: "mcp-appwrite-filesystem_write_by_content",
   description: "Write a file to Appwrite Storage by content",
   parameters: z.object({
     filename: z.string(),
@@ -151,7 +151,7 @@ server.addTool({
 });
 
 server.addTool({
-  name: "mcp-appwrite-storage_write_by_path",
+  name: "mcp-appwrite-filesystem_write_by_path",
   description: "Write a file to Appwrite Storage by path",
   parameters: z.object({
     filename: z.string(),
@@ -167,7 +167,7 @@ server.addTool({
 });
 
 server.addTool({
-  name: "mcp-appwrite-storage_write_by_base64",
+  name: "mcp-appwrite-filesystem_write_by_base64",
   description: "Write a file to Appwrite Storage by base64",
   parameters: z.object({
     filename: z.string(),
@@ -182,7 +182,7 @@ server.addTool({
 });
 
 server.addTool({
-  name: "mcp-appwrite-storage_delete",
+  name: "mcp-appwrite-filesystem_delete",
   description: "Delete a file from Appwrite Storage",
   parameters: z.object({
     fileId: z.string(),
@@ -194,7 +194,7 @@ server.addTool({
 });
 
 server.addTool({
-  name: "mcp-appwrite-storage_list",
+  name: "mcp-appwrite-filesystem_list",
   description: "List all files in Appwrite Storage",
   execute: async () => {
     const files = await storage.listFiles(bucketId);
@@ -212,7 +212,7 @@ server.addTool({
 });
 
 server.addTool({
-  name: "mcp-appwrite-storage_get_file_metadata",
+  name: "mcp-appwrite-filesystem_get_file_metadata",
   description: "Get the metadata of a file in Appwrite Storage",
   parameters: z.object({
     fileId: z.string(),
